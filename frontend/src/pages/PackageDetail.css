@@ -1,0 +1,144 @@
+.package-detail-page {
+  padding: 40px 0;
+  min-height: calc(100vh - 80px);
+}
+
+.package-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.info-item {
+  padding: 15px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  color: #1e293b;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
+.info-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.itinerary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.itinerary-day {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.day-number {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.day-content {
+  flex: 1;
+}
+
+.day-content h3 {
+  font-size: 1.3rem;
+  color: #1e293b;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.activities {
+  margin-bottom: 10px;
+}
+
+.activities strong {
+  color: #0f172a;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 700;
+}
+
+.activities ul {
+  margin-left: 20px;
+  color: #475569;
+}
+
+.activities ul li {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.meals {
+  color: #475569;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.inclusions-exclusions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.list-column h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.list-column ul {
+  margin-left: 20px;
+  color: #475569;
+}
+
+.list-column ul li {
+  margin: 10px 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.booking-info {
+  padding: 15px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.booking-info p {
+  margin: 8px 0;
+  color: #1e293b;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@media (max-width: 968px) {
+  .inclusions-exclusions {
+    grid-template-columns: 1fr;
+  }
+
+  .itinerary-day {
+    flex-direction: column;
+  }
+}
