@@ -41,3 +41,7 @@ coverage/
 # Misc
 .cache
 .temp
+node_modules 
+node_modules 
+.env 
+nul 

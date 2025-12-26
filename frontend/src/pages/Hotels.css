@@ -1,6 +1,21 @@
 .hotels-page {
-  padding: 40px 0;
   min-height: calc(100vh - 80px);
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 700;
+  padding: 60px 0 40px 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #7c3aed 100%);
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.6);
+  margin: 0 0 40px 0;
+}
+
+.container {
+  padding: 0 40px 40px 40px;
 }
 
 .hotel-card {

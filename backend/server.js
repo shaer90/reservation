@@ -1,10 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import hotelRoutes from './routes/hotels.js';
-import packageRoutes from './routes/packages.js';
-import bookingRoutes from './routes/bookings.js';
+import mockHotelRoutes from './routes/mock-hotels.js';
+import mockPackageRoutes from './routes/mock-packages.js';
 
 dotenv.config();
 
@@ -16,18 +14,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Database connection
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB connected successfully'))
-.catch((err) => console.error('MongoDB connection error:', err));
+console.log('Using mock data (MongoDB connection temporarily disabled)');
 
-// Routes
-app.use('/api/hotels', hotelRoutes);
-app.use('/api/packages', packageRoutes);
-app.use('/api/bookings', bookingRoutes);
+// Routes - Using mock data
+app.use('/api/hotels', mockHotelRoutes);
+app.use('/api/packages', mockPackageRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

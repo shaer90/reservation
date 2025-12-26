@@ -20,9 +20,9 @@ const HotelDetail = () => {
     if (hotel && contentRef.current) {
       gsap.from(contentRef.current.children, {
         opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.2,
+        y: 20,
+        duration: 0.4,
+        stagger: 0.1,
         ease: 'power2.out'
       });
     }

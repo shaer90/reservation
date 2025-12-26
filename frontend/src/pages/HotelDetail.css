@@ -1,17 +1,21 @@
 .hotel-detail-page {
-  padding: 40px 0;
   min-height: calc(100vh - 80px);
 }
 
 .detail-header {
-  margin-bottom: 30px;
+  text-align: center;
+  padding: 60px 0 40px 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #7c3aed 100%);
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.6);
+  margin: 0 0 40px 0;
 }
 
 .detail-header h1 {
   font-size: 2.5rem;
-  color: #1a1a1a;
+  color: #fff;
   margin-bottom: 15px;
   font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header-info {
@@ -19,33 +23,41 @@
   gap: 20px;
   font-size: 1.1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .rating {
   color: #f59e0b;
   font-weight: 700;
-  background: #fef3c7;
-  padding: 6px 14px;
-  border-radius: 6px;
-  border-left: 3px solid #f59e0b;
+  background: rgba(254, 243, 199, 0.95);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 2px solid #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
 .location {
-  color: #1e293b;
-  font-weight: 600;
-  background: #f1f5f9;
-  padding: 6px 14px;
-  border-radius: 6px;
-  border-left: 3px solid #2563eb;
+  color: #fff;
+  font-weight: 700;
+  background: rgba(37, 99, 235, 0.3);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 2px solid #60a5fa;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.container {
+  padding: 0 40px 40px 40px;
+  background: #f8f9fa;
 }
 
 .detail-image {
   width: 100%;
   height: 400px;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   margin-bottom: 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .detail-image img {
@@ -62,19 +74,26 @@
 
 .detail-section {
   margin-bottom: 40px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .detail-section h2 {
   font-size: 1.8rem;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #ecf0f1;
+  border-bottom: 3px solid #7c3aed;
+  font-weight: 800;
 }
 
 .detail-section p {
   line-height: 1.8;
-  color: #7f8c8d;
+  color: #1a1a1a;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .amenities-grid {
@@ -84,10 +103,13 @@
 }
 
 .amenity-item {
-  padding: 10px;
-  background: #f8f9fa;
-  border-radius: 5px;
-  color: #2c3e50;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #a5b4fc 0%, #c7d2fe 100%);
+  border-radius: 8px;
+  color: #1e1b4b;
+  font-weight: 800;
+  border-left: 4px solid #7c3aed;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
 }
 
 .rooms-list {
@@ -100,31 +122,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: white;
-  border: 2px solid #ecf0f1;
-  border-radius: 10px;
-  transition: border-color 0.3s ease;
+  padding: 24px;
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .room-card:hover {
-  border-color: #3498db;
+  border-color: #7c3aed;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+  transform: translateY(-2px);
 }
 
 .room-info h3 {
   font-size: 1.3rem;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 8px;
+  font-weight: 800;
 }
 
 .room-info p {
-  color: #7f8c8d;
+  color: #1a1a1a;
   margin: 5px 0;
+  font-weight: 700;
 }
 
 .availability {
-  font-weight: 500;
-  color: #27ae60;
+  font-weight: 600;
+  color: #10b981;
 }
 
 .room-price {
@@ -133,14 +160,15 @@
 
 .room-price .price {
   font-size: 2rem;
-  font-weight: bold;
-  color: #3498db;
+  font-weight: 800;
+  color: #7c3aed;
   display: block;
 }
 
 .room-price .period {
-  color: #7f8c8d;
+  color: #1a1a1a;
   font-size: 14px;
+  font-weight: 800;
 }
 
 .detail-sidebar {
@@ -150,38 +178,46 @@
 }
 
 .booking-card {
-  background: white;
+  background: #ffffff;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 2px solid #7c3aed;
 }
 
 .booking-price {
   text-align: center;
   margin-bottom: 25px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #ecf0f1;
+  border-bottom: 3px solid #7c3aed;
 }
 
 .booking-price .from {
   display: block;
   font-size: 14px;
-  color: #7f8c8d;
+  color: #1a1a1a;
   margin-bottom: 5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .booking-price .amount {
   display: block;
   font-size: 3rem;
-  font-weight: bold;
-  color: #3498db;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .booking-price .period {
   display: block;
   font-size: 14px;
-  color: #7f8c8d;
+  color: #1a1a1a;
   margin-top: 5px;
+  font-weight: 800;
 }
 
 .btn-block {

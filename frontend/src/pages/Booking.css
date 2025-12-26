@@ -21,7 +21,7 @@
 .form-section {
   margin-bottom: 40px;
   padding-bottom: 30px;
-  border-bottom: 2px solid #ecf0f1;
+  border-bottom: 2px solid #09aad2;
 }
 
 .form-section:last-of-type {
@@ -56,7 +56,7 @@
 .form-group textarea {
   width: 100%;
   padding: 12px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #be0606;
   border-radius: 5px;
   font-size: 15px;
   transition: border-color 0.3s ease;

@@ -17,13 +17,15 @@ const Packages = () => {
 
   useEffect(() => {
     if (packages.length > 0) {
-      gsap.from(cardsRef.current, {
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out'
-      });
+      gsap.fromTo(cardsRef.current,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: 'power2.out'
+        }
+      );
     }
   }, [packages]);
 
