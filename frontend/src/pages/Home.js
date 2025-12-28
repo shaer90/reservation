@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Threads from '../components/Threads';
 import './Home.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -53,6 +54,14 @@ const Home = () => {
   return (
     <div className="home">
       <section className="hero">
+        <div style={{ width: '100%', height: '600px', position: 'absolute', top: 0, left: 0, zIndex: 0, opacity: 0.5 }}>
+          <Threads
+            color={[0.9, 0.9, 0.9]}
+            amplitude={1}
+            distance={0}
+            enableMouseInteraction={true}
+          />
+        </div>
         <div className="hero-content" ref={heroRef}>
           <h1 className="hero-title" ref={titleRef}>Discover Your Next Adventure</h1>
           <p className="hero-subtitle" ref={subtitleRef}>

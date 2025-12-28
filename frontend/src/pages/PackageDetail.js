@@ -50,10 +50,10 @@ const PackageDetail = () => {
     return <div className="error">{error || 'Package not found'}</div>;
   }
 
-  const mapLocations = pkg.destinations.map(dest => ({
+  const mapLocations = pkg.destinations ? pkg.destinations.map(dest => ({
     name: dest.name,
     coordinates: dest.location.coordinates
-  }));
+  })) : [];
 
   const mapCenter = mapLocations.length > 0 ? {
     lat: mapLocations[0].coordinates[1],
@@ -134,26 +134,32 @@ const PackageDetail = () => {
                 </section>
               )}
 
-              <section className="detail-section">
-                <div className="inclusions-exclusions">
-                  <div className="list-column">
-                    <h3>✓ What's Included</h3>
-                    <ul>
-                      {pkg.inclusions.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
+              {(pkg.inclusions || pkg.includes || pkg.exclusions) && (
+                <section className="detail-section">
+                  <div className="inclusions-exclusions">
+                    {(pkg.inclusions || pkg.includes) && (
+                      <div className="list-column">
+                        <h3>✓ What's Included</h3>
+                        <ul>
+                          {(pkg.inclusions || pkg.includes || []).map((item, index) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {pkg.exclusions && (
+                      <div className="list-column">
+                        <h3>✗ What's Not Included</h3>
+                        <ul>
+                          {pkg.exclusions.map((item, index) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
-                  <div className="list-column">
-                    <h3>✗ What's Not Included</h3>
-                    <ul>
-                      {pkg.exclusions.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </section>
+                </section>
+              )}
 
               {mapLocations.length > 0 && (
                 <section className="detail-section">

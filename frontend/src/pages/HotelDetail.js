@@ -50,12 +50,12 @@ const HotelDetail = () => {
     return <div className="error">{error || 'Hotel not found'}</div>;
   }
 
-  const mapLocations = [{
+  const mapLocations = hotel.location?.coordinates ? [{
     name: hotel.name,
     coordinates: hotel.location.coordinates,
     address: hotel.address,
     price: hotel.pricePerNight
-  }];
+  }] : [];
 
   return (
     <div className="hotel-detail-page">
@@ -88,49 +88,55 @@ const HotelDetail = () => {
                 <p>{hotel.address}</p>
               </section>
 
-              <section className="detail-section">
-                <h2>Amenities</h2>
-                <div className="amenities-grid">
-                  {hotel.amenities.map((amenity, index) => (
-                    <div key={index} className="amenity-item">
-                      ✓ {amenity}
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section className="detail-section">
-                <h2>Room Types</h2>
-                <div className="rooms-list">
-                  {hotel.rooms.map((room, index) => (
-                    <div key={index} className="room-card">
-                      <div className="room-info">
-                        <h3>{room.type}</h3>
-                        <p>Capacity: {room.capacity} guests</p>
-                        <p className="availability">
-                          {room.available > 0 ? `${room.available} rooms available` : 'Sold out'}
-                        </p>
+              {hotel.amenities && hotel.amenities.length > 0 && (
+                <section className="detail-section">
+                  <h2>Amenities</h2>
+                  <div className="amenities-grid">
+                    {hotel.amenities.map((amenity, index) => (
+                      <div key={index} className="amenity-item">
+                        ✓ {amenity}
                       </div>
-                      <div className="room-price">
-                        <span className="price">${room.price}</span>
-                        <span className="period">/night</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
+                    ))}
+                  </div>
+                </section>
+              )}
 
-              <section className="detail-section">
-                <h2>Location</h2>
-                <GoogleMap
-                  locations={mapLocations}
-                  center={{
-                    lat: hotel.location.coordinates[1],
-                    lng: hotel.location.coordinates[0]
-                  }}
-                  zoom={14}
-                />
-              </section>
+              {hotel.rooms && hotel.rooms.length > 0 && (
+                <section className="detail-section">
+                  <h2>Room Types</h2>
+                  <div className="rooms-list">
+                    {hotel.rooms.map((room, index) => (
+                      <div key={index} className="room-card">
+                        <div className="room-info">
+                          <h3>{room.type}</h3>
+                          <p>Capacity: {room.capacity} guests</p>
+                          <p className="availability">
+                            {room.available > 0 ? `${room.available} rooms available` : 'Sold out'}
+                          </p>
+                        </div>
+                        <div className="room-price">
+                          <span className="price">${room.price}</span>
+                          <span className="period">/night</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {mapLocations.length > 0 && (
+                <section className="detail-section">
+                  <h2>Location</h2>
+                  <GoogleMap
+                    locations={mapLocations}
+                    center={{
+                      lat: hotel.location.coordinates[1],
+                      lng: hotel.location.coordinates[0]
+                    }}
+                    zoom={14}
+                  />
+                </section>
+              )}
             </div>
 
             <div className="detail-sidebar">
